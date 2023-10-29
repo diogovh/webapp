@@ -1,0 +1,13 @@
+FROM php:8.2-cli
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+CMD [ "php", "./index.php" ]
+
+============
+docker run -it alpine
+apk add curl
+apk add apache2
+
+apt-get -y update && apt-get install -y curl && apt-get install -y apache2 && apt-get install -y inetutils-ping && apt-get install -y nano && apt-get install -y php && apt-get install -y php-xdebug && service apache2 start
+
+docker run -it -p 8080:80 -v C:\Users\Administrador\Documents\repo_github\webapp:/var/www/html ubuntu /bin/bash
