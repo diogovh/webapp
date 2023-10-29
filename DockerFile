@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:23.10
 ENV timezone=America/Sao_Paulo
 RUN  ln -snf /usr/share/zoneinfo/${timezone} /etc/localtime && echo ${timezone} > /etc/timezone && \
  apt-get -y update && \
@@ -11,6 +11,5 @@ RUN  ln -snf /usr/share/zoneinfo/${timezone} /etc/localtime && echo ${timezone} 
  apt-get install -y nano
 EXPOSE 80
 WORKDIR /var/www/html
-VOLUME C:\Users\Administrador\Documents\repo_github\webapp /var/www/html
 ENTRYPOINT /etc/init.d/apache2 start && /bin/bash
 CMD ["true"]
